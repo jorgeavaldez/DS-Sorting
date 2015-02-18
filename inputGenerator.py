@@ -5,7 +5,7 @@ f = open('input.txt', 'w')
 letters = 'abcdefghijklmnopqrstuvwxyz'
 capLetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
-ssize = random.randint(0, 50)
+ssize = random.randint(0, 90)
 inputsize = random.randint(0, 1000)
 
 sentenceCount = 0

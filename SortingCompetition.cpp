@@ -69,16 +69,21 @@ void SortingCompetition::setFileName(const string &inputFileName)
 // in the 5th place in your structure.
 bool SortingCompetition::readData()
 {
-    ifstream in(this->inputFileName);
+    ifstream in(inputFileName);
     
     int i = 0;
+    char* buffer = new char[91];
     
     while (!in.eof())
     {
         if (inputsize == inputcapacity)
             resizeInput();
         
-        in >> inputWords[i];
+        in >> buffer;
+        
+        inputWords[i] = new char[strlen(buffer) + 1];
+        strcpy(inputWords[i], buffer);
+        
         i++;
         inputsize++;
     }
@@ -120,5 +125,8 @@ void SortingCompetition::sortData()
 // your sorting algorithm (in other words, did it sort properly?).
 void SortingCompetition::outputData(const string& outputFileName)
 {
-    
+    for (int i = 0; sortWords[i]; i++)
+    {
+        cout << sortWords[i] << endl;
+    }
 }
