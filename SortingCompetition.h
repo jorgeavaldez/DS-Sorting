@@ -11,6 +11,7 @@
 
 #include <iostream>
 #include <string>
+#include <fstream>
 
 using namespace std;
 
@@ -30,10 +31,21 @@ private:
     // MEMBER DATA
     
     string inputFileName;
-    string* lines;
     
-    int size;
-    int capacity;
+    char** inputWords;
+    char** sortWords;
+    
+    // the number of elements in the char**
+    int inputsize;
+    int sortsize;
+    
+    // the number of spots we can
+    int inputcapacity;
+    int sortcapacity;
+    
+    // resizes the char** so we can fit more words.
+    // adds 50 to the default capacity.
+    void resizeInput();
     
 public:
     

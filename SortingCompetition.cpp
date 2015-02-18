@@ -16,7 +16,21 @@ using namespace std;
 //
 //**********************************************************
 
-
+void SortingCompetition::resizeInput()
+{
+    char** temp = new char*[inputcapacity + 50];
+    
+    for (int i = 0; i < inputsize; i++)
+    {
+        temp[i] = new char[strlen(inputWords[i]) + 1];
+        
+        strcpy(temp[i], inputWords[i]);
+    }
+    
+    inputcapacity += 50;
+    delete[] inputWords;
+    inputWords = temp;
+}
 
 //**********************************************************
 //
@@ -27,11 +41,17 @@ using namespace std;
 SortingCompetition::SortingCompetition(const string& inputFileName)
 {
     setFileName(inputFileName);
+    
+    inputcapacity = 50;
+    inputsize = 0;
+    
+    inputWords = new char*[inputcapacity];
 }
 
 SortingCompetition::~SortingCompetition()
 {
-    delete[] lines;
+    delete[] inputWords;
+    delete[] sortWords;
 }
 
 // change the input file name
@@ -49,7 +69,21 @@ void SortingCompetition::setFileName(const string &inputFileName)
 // in the 5th place in your structure.
 bool SortingCompetition::readData()
 {
-    return false;
+    ifstream in(this->inputFileName);
+    
+    int i = 0;
+    
+    while (!in.eof())
+    {
+        if (inputsize == inputcapacity)
+            resizeInput();
+        
+        in >> inputWords[i];
+        i++;
+        inputsize++;
+    }
+    
+    return true;
 }
 
 // copy the data from the original data structure
@@ -61,8 +95,16 @@ bool SortingCompetition::readData()
 // No sorting actions can be done in this method.
 bool SortingCompetition::prepareData()
 {
-    // TODO: Clear out supplementary data structure.
-    return false;
+    // Clear out supplementary data structure.
+    delete[] sortWords;
+    sortWords = new char*[inputsize];
+    
+    for (int i = 0; i < inputsize; i++)
+    {
+        sortWords[i] = inputWords[i];
+    }
+    
+    return true;
 }
 
 // sort the data based on the criteria set forth in the

@@ -14,6 +14,7 @@ LSD Radix, which stands for "Least Significant Digit" Radix Sort.
 - Clear out the supplementary data structure in the beginning of prepare data
 - Use char** because contiguous memory is fast af
 - Look into OpenMP for multithreading
+- memset() initializes the first arg to the second arg so you don't have segfaults or whatever.'
 
 ### Length Prefixed Strings
 - [Guide to Strings](http://www.plantation-productions.com/Webster/www.artofasm.com/Linux/HTML/CharacterStrings.html)
