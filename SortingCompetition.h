@@ -37,11 +37,9 @@ private:
     
     // the number of elements in the char**
     int inputsize;
-    int sortsize;
     
     // the number of spots we can
     int inputcapacity;
-    int sortcapacity;
     
     // resizes the char** so we can fit more words.
     // adds 50 to the default capacity.
