@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E53646FA1A93E4C20035BD04 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E53646F91A93E4C20035BD04 /* main.cpp */; };
-		E53646FD1A93E52D0035BD04 /* SortingCompetition.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E53646FC1A93E52D0035BD04 /* SortingCompetition.cpp */; };
-		E53646FF1A93F5480035BD04 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = E53646FE1A93F5480035BD04 /* README.md */; };
+		E57D6A971A942FFC00CC1C41 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E57D6A921A942FFC00CC1C41 /* main.cpp */; };
+		E57D6A981A942FFC00CC1C41 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = E57D6A931A942FFC00CC1C41 /* README.md */; };
+		E57D6A9A1A942FFC00CC1C41 /* SortingCompetition.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E57D6A951A942FFC00CC1C41 /* SortingCompetition.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		E5E102C51A93E261007AA5D0 /* CopyFiles */ = {
+		E53647071A942EB00035BD04 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -25,15 +25,15 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		E53646F91A93E4C20035BD04 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		E53646FB1A93E4CE0035BD04 /* SortingCompetition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SortingCompetition.h; sourceTree = SOURCE_ROOT; };
-		E53646FC1A93E52D0035BD04 /* SortingCompetition.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SortingCompetition.cpp; sourceTree = SOURCE_ROOT; };
-		E53646FE1A93F5480035BD04 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
-		E5E102C71A93E261007AA5D0 /* Project3 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Project3; sourceTree = BUILT_PRODUCTS_DIR; };
+		E53647091A942EB00035BD04 /* SortingCompetition */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SortingCompetition; sourceTree = BUILT_PRODUCTS_DIR; };
+		E57D6A921A942FFC00CC1C41 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		E57D6A931A942FFC00CC1C41 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		E57D6A951A942FFC00CC1C41 /* SortingCompetition.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SortingCompetition.cpp; sourceTree = SOURCE_ROOT; };
+		E57D6A961A942FFC00CC1C41 /* SortingCompetition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SortingCompetition.h; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		E5E102C41A93E261007AA5D0 /* Frameworks */ = {
+		E53647061A942EB00035BD04 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -43,100 +43,107 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E5E102BE1A93E261007AA5D0 = {
+		E53647001A942EB00035BD04 = {
 			isa = PBXGroup;
 			children = (
-				E53646FE1A93F5480035BD04 /* README.md */,
-				E53646F91A93E4C20035BD04 /* main.cpp */,
-				E5E102C91A93E261007AA5D0 /* SortingCompetition */,
-				E5E102C81A93E261007AA5D0 /* Products */,
+				E57D6A921A942FFC00CC1C41 /* main.cpp */,
+				E57D6A9B1A94314000CC1C41 /* Other */,
+				E536470B1A942EB00035BD04 /* SortingCompetition */,
+				E536470A1A942EB00035BD04 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		E5E102C81A93E261007AA5D0 /* Products */ = {
+		E536470A1A942EB00035BD04 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E5E102C71A93E261007AA5D0 /* Project3 */,
+				E53647091A942EB00035BD04 /* SortingCompetition */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		E5E102C91A93E261007AA5D0 /* SortingCompetition */ = {
+		E536470B1A942EB00035BD04 /* SortingCompetition */ = {
 			isa = PBXGroup;
 			children = (
-				E53646FB1A93E4CE0035BD04 /* SortingCompetition.h */,
-				E53646FC1A93E52D0035BD04 /* SortingCompetition.cpp */,
+				E57D6A961A942FFC00CC1C41 /* SortingCompetition.h */,
+				E57D6A951A942FFC00CC1C41 /* SortingCompetition.cpp */,
 			);
-			name = SortingCompetition;
-			path = Project3;
+			path = SortingCompetition;
+			sourceTree = "<group>";
+		};
+		E57D6A9B1A94314000CC1C41 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				E57D6A931A942FFC00CC1C41 /* README.md */,
+			);
+			name = Other;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E5E102C61A93E261007AA5D0 /* Project3 */ = {
+		E53647081A942EB00035BD04 /* SortingCompetition */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E5E102CE1A93E261007AA5D0 /* Build configuration list for PBXNativeTarget "Project3" */;
+			buildConfigurationList = E53647101A942EB00035BD04 /* Build configuration list for PBXNativeTarget "SortingCompetition" */;
 			buildPhases = (
-				E5E102C31A93E261007AA5D0 /* Sources */,
-				E5E102C41A93E261007AA5D0 /* Frameworks */,
-				E5E102C51A93E261007AA5D0 /* CopyFiles */,
+				E53647051A942EB00035BD04 /* Sources */,
+				E53647061A942EB00035BD04 /* Frameworks */,
+				E53647071A942EB00035BD04 /* CopyFiles */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = Project3;
-			productName = Project3;
-			productReference = E5E102C71A93E261007AA5D0 /* Project3 */;
+			name = SortingCompetition;
+			productName = SortingCompetition;
+			productReference = E53647091A942EB00035BD04 /* SortingCompetition */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		E5E102BF1A93E261007AA5D0 /* Project object */ = {
+		E53647011A942EB00035BD04 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0610;
-				ORGANIZATIONNAME = "Jorge Valdez";
+				ORGANIZATIONNAME = MicrosoftRD;
 				TargetAttributes = {
-					E5E102C61A93E261007AA5D0 = {
+					E53647081A942EB00035BD04 = {
 						CreatedOnToolsVersion = 6.1.1;
 					};
 				};
 			};
-			buildConfigurationList = E5E102C21A93E261007AA5D0 /* Build configuration list for PBXProject "Project3" */;
+			buildConfigurationList = E53647041A942EB00035BD04 /* Build configuration list for PBXProject "SortingCompetition" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = E5E102BE1A93E261007AA5D0;
-			productRefGroup = E5E102C81A93E261007AA5D0 /* Products */;
+			mainGroup = E53647001A942EB00035BD04;
+			productRefGroup = E536470A1A942EB00035BD04 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E5E102C61A93E261007AA5D0 /* Project3 */,
+				E53647081A942EB00035BD04 /* SortingCompetition */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		E5E102C31A93E261007AA5D0 /* Sources */ = {
+		E53647051A942EB00035BD04 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E53646FF1A93F5480035BD04 /* README.md in Sources */,
-				E53646FD1A93E52D0035BD04 /* SortingCompetition.cpp in Sources */,
-				E53646FA1A93E4C20035BD04 /* main.cpp in Sources */,
+				E57D6A981A942FFC00CC1C41 /* README.md in Sources */,
+				E57D6A971A942FFC00CC1C41 /* main.cpp in Sources */,
+				E57D6A9A1A942FFC00CC1C41 /* SortingCompetition.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		E5E102CC1A93E261007AA5D0 /* Debug */ = {
+		E536470E1A942EB00035BD04 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -176,7 +183,7 @@
 			};
 			name = Debug;
 		};
-		E5E102CD1A93E261007AA5D0 /* Release */ = {
+		E536470F1A942EB00035BD04 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -210,14 +217,14 @@
 			};
 			name = Release;
 		};
-		E5E102CF1A93E261007AA5D0 /* Debug */ = {
+		E53647111A942EB00035BD04 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
-		E5E102D01A93E261007AA5D0 /* Release */ = {
+		E53647121A942EB00035BD04 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -227,25 +234,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E5E102C21A93E261007AA5D0 /* Build configuration list for PBXProject "Project3" */ = {
+		E53647041A942EB00035BD04 /* Build configuration list for PBXProject "SortingCompetition" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E5E102CC1A93E261007AA5D0 /* Debug */,
-				E5E102CD1A93E261007AA5D0 /* Release */,
+				E536470E1A942EB00035BD04 /* Debug */,
+				E536470F1A942EB00035BD04 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E5E102CE1A93E261007AA5D0 /* Build configuration list for PBXNativeTarget "Project3" */ = {
+		E53647101A942EB00035BD04 /* Build configuration list for PBXNativeTarget "SortingCompetition" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E5E102CF1A93E261007AA5D0 /* Debug */,
-				E5E102D01A93E261007AA5D0 /* Release */,
+				E53647111A942EB00035BD04 /* Debug */,
+				E53647121A942EB00035BD04 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = E5E102BF1A93E261007AA5D0 /* Project object */;
+	rootObject = E53647011A942EB00035BD04 /* Project object */;
 }

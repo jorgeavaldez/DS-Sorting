@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E5E102C61A93E261007AA5D0"
-               BuildableName = "Project3"
-               BlueprintName = "Project3"
-               ReferencedContainer = "container:Project3.xcodeproj">
+               BlueprintIdentifier = "E53647081A942EB00035BD04"
+               BuildableName = "SortingCompetition"
+               BlueprintName = "SortingCompetition"
+               ReferencedContainer = "container:SortingCompetition.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,10 +32,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E5E102C61A93E261007AA5D0"
-            BuildableName = "Project3"
-            BlueprintName = "Project3"
-            ReferencedContainer = "container:Project3.xcodeproj">
+            BlueprintIdentifier = "E53647081A942EB00035BD04"
+            BuildableName = "SortingCompetition"
+            BlueprintName = "SortingCompetition"
+            ReferencedContainer = "container:SortingCompetition.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -51,10 +51,10 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E5E102C61A93E261007AA5D0"
-            BuildableName = "Project3"
-            BlueprintName = "Project3"
-            ReferencedContainer = "container:Project3.xcodeproj">
+            BlueprintIdentifier = "E53647081A942EB00035BD04"
+            BuildableName = "SortingCompetition"
+            BlueprintName = "SortingCompetition"
+            ReferencedContainer = "container:SortingCompetition.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -69,10 +69,10 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "E5E102C61A93E261007AA5D0"
-            BuildableName = "Project3"
-            BlueprintName = "Project3"
-            ReferencedContainer = "container:Project3.xcodeproj">
+            BlueprintIdentifier = "E53647081A942EB00035BD04"
+            BuildableName = "SortingCompetition"
+            BlueprintName = "SortingCompetition"
+            ReferencedContainer = "container:SortingCompetition.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
