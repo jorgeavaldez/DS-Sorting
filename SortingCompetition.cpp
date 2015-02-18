@@ -118,7 +118,7 @@ bool SortingCompetition::prepareData()
 // THIS IS THE FUNCTION THAT WILL BE TIMED.
 void SortingCompetition::sortData()
 {
-    
+    countSort(sortWords);
 }
 
 // using outputFileName, write the "sorted" data structure
@@ -132,26 +132,39 @@ void SortingCompetition::outputData(const string& outputFileName)
     }
 }
 
-void SortingCompetition::countSort(char* &inputWords) {
+void SortingCompetition::countSort(char** &inputWords)
+{
+    char** output = new char*[inputsize];
 
+    int count[RANGE + 1];
+    
+    memset(count, 0, sizeof(count));
 
-    char *output[inputsize];
-
-    int count[RANGE + 1], i;
-    memset(cout, 0, sizeof(count));
-
-    for (i = 0; inputWords[i]; i++)
+    for (int i = 0; i < inputsize; i++)
+    {
         ++count[inputWords[i][0]];
+    }
 
-    for (i = 0; i <= RANGE; ++i)
-        count[i] += count[i+1];
+    for (int i = 1; i <= RANGE; ++i)
+        count[i] += count[i - 1];
 
-    for (i = 0; inputWords[i]; ++i) {
-        output[count[inputWords[i][0]]-1] = new char[strlen(inputWords[i]) + 1];
-        strcpy(output[count[inputWords[i][0]]-1], inputWords[i]);
+    for (int i = 0; i < inputsize; ++i)
+    {
+        output[count[inputWords[i][0]] - 1] = new char[inputWords[i][0] + 1];
+        
+        strcpy(output[count[inputWords[i][0]] - 1], inputWords[i]);
+        
         --count[inputWords[i][0]];
     }
 
     delete[] inputWords;
     inputWords = output;
+}
+
+void SortingCompetition::printArr(char**& arr)
+{
+    for (int i = 0; i < inputsize; i++)
+    {
+        cout << arr[i] << endl;
+    }
 }

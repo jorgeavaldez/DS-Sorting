@@ -12,6 +12,7 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#include <cstring>
 
 using namespace std;
 
@@ -44,6 +45,8 @@ private:
     // resizes the char** so we can fit more words.
     // adds 50 to the default capacity.
     void resizeInput();
+    
+    void countSort(char**& inputWords);
     
 public:
     
@@ -85,6 +88,8 @@ public:
     // to the file. This will be used to test the validity of
     // your sorting algorithm (in other words, did it sort properly?).
     void outputData(const string& outputFileName);
+    
+    void printArr(char**& arr);
 };
 
 #endif

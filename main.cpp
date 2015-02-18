@@ -49,5 +49,6 @@ int main()
     SortingCompetition sc(input);
     sc.readData();
     sc.prepareData();
+    sc.sortData();
     sc.outputData("output.txt");
 }
