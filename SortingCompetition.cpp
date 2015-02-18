@@ -7,6 +7,7 @@
 //
 
 #include "SortingCompetition.h"
+#define RANGE 255
 
 using namespace std;
 
@@ -129,4 +130,28 @@ void SortingCompetition::outputData(const string& outputFileName)
     {
         cout << sortWords[i] << endl;
     }
+}
+
+void SortingCompetition::countSort(char* &inputWords) {
+
+
+    char *output[inputsize];
+
+    int count[RANGE + 1], i;
+    memset(cout, 0, sizeof(count));
+
+    for (i = 0; inputWords[i]; i++)
+        ++count[inputWords[i][0]];
+
+    for (i = 0; i <= RANGE; ++i)
+        count[i] += count[i+1];
+
+    for (i = 0; inputWords[i]; ++i) {
+        output[count[inputWords[i][0]]-1] = new char[strlen(inputWords[i]) + 1];
+        strcpy(output[count[inputWords[i][0]]-1], inputWords[i]);
+        --count[inputWords[i][0]];
+    }
+
+    delete[] inputWords;
+    inputWords = output;
 }
