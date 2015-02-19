@@ -4,11 +4,13 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += main.cpp \
-    SortingCompetition.cpp
+    SortingCompetition.cpp \
+    quicksort.cpp
 
 OTHER_FILES += \
     README.md
 
 HEADERS += \
-    SortingCompetition.h
+    SortingCompetition.h \
+    quicksort.h
 

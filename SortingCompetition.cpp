@@ -173,3 +173,21 @@ string SortingCompetition::printArr(char**& arr)
     
     return output;
 }
+
+char**& SortingCompetition::getSortWords()
+{
+    return this->sortWords;
+}
+
+char**& SortingCompetition::getInputWords()
+{
+    return this->inputWords;
+}
+
+int& SortingCompetition::getInputSize(){
+    return this->inputsize;
+}
+
+int& SortingCompetition::getInputCapacity(){
+    return this->inputcapacity;
+}
