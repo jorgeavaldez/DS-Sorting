@@ -82,7 +82,7 @@ public:
     // sort the data based on the criteria set forth in the
     // hand out.
     // THIS IS THE FUNCTION THAT WILL BE TIMED.
-    void sortData();
+    virtual void sortData();
     
     // using outputFileName, write the "sorted" data structure
     // to the file. This will be used to test the validity of
@@ -90,6 +90,14 @@ public:
     void outputData(const string& outputFileName);
     
     void printArr(char**& arr);
+
+    char**& getSortWords();
+
+    char**& getInputWords();
+
+    int& getInputSize();
+
+    int& getInputCapacity();
 };
 
 #endif

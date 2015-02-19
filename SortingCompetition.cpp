@@ -168,3 +168,21 @@ void SortingCompetition::printArr(char**& arr)
         cout << arr[i] << endl;
     }
 }
+
+char**& SortingCompetition::getSortWords()
+{
+    return this->sortWords;
+}
+
+char**& SortingCompetition::getInputWords()
+{
+    return this->inputWords;
+}
+
+int& SortingCompetition::getInputSize(){
+    return this->inputsize;
+}
+
+int& SortingCompetition::getInputCapacity(){
+    return this->inputcapacity;
+}
