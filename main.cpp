@@ -22,33 +22,21 @@ long fibonacci(int n)
 
 int main()
 {
-//    //declare 2 time points
-//      time_point<chrono::system_clock> start, end;
-//
-//    //store the current time (now()) in start, execute
-//    //Fibonacci function, then store current time in end
-//    start = system_clock::now();
-//    cout << "f(42) = " << fibonacci(9) << '\n';
-//    end = system_clock::now();
-//
-//    //subtract end from beginning to get number of seconds elapsed
-//      duration<double> elapsed_seconds = end-start;
-//    time_t end_time =
-//    system_clock::to_time_t(end);
-//
-//    //output the duration.
-//    cout << "finished computation at " <<
-//    ctime(&end_time)
-//              << "elapsed time: " << elapsed_seconds.count() << "s\n";
     string input;
+    string output;
     
     cout << "Please enter the input file name: ";
     cin >> input;
     cout << "\n" << input << endl;
     
-    SortingCompetition sc(input);
+    cout << "Please enter the output file name: ";
+    cin >> output;
+    cout << "\n" << input << endl;
+
+    
+    SortingCompetition sc("/users/jorgev/projects/project4/" + input);
     sc.readData();
     sc.prepareData();
     sc.sortData();
-    sc.outputData("output.txt");
+    sc.outputData("/users/jorgev/projects/project4/" + output);
 }

@@ -13,6 +13,7 @@
 #include <string>
 #include <fstream>
 #include <cstring>
+#include <string>
 
 using namespace std;
 
@@ -89,7 +90,7 @@ public:
     // your sorting algorithm (in other words, did it sort properly?).
     void outputData(const string& outputFileName);
     
-    void printArr(char**& arr);
+    string printArr(char**& arr);
 };
 
 #endif

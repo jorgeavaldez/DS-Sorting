@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E50B3ACD1A9691D40088CDE2 /* Timing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E50B3ACC1A9691D40088CDE2 /* Timing.cpp */; };
 		E57D6A971A942FFC00CC1C41 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E57D6A921A942FFC00CC1C41 /* main.cpp */; };
 		E57D6A981A942FFC00CC1C41 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = E57D6A931A942FFC00CC1C41 /* README.md */; };
 		E57D6A9A1A942FFC00CC1C41 /* SortingCompetition.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E57D6A951A942FFC00CC1C41 /* SortingCompetition.cpp */; };
@@ -25,6 +26,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		E50B3ACC1A9691D40088CDE2 /* Timing.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Timing.cpp; sourceTree = "<group>"; };
 		E53647091A942EB00035BD04 /* SortingCompetition */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SortingCompetition; sourceTree = BUILT_PRODUCTS_DIR; };
 		E57D6A921A942FFC00CC1C41 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		E57D6A931A942FFC00CC1C41 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -46,6 +48,7 @@
 		E53647001A942EB00035BD04 = {
 			isa = PBXGroup;
 			children = (
+				E50B3ACC1A9691D40088CDE2 /* Timing.cpp */,
 				E57D6A921A942FFC00CC1C41 /* main.cpp */,
 				E57D6A9B1A94314000CC1C41 /* Other */,
 				E536470B1A942EB00035BD04 /* SortingCompetition */,
@@ -137,6 +140,7 @@
 				E57D6A981A942FFC00CC1C41 /* README.md in Sources */,
 				E57D6A971A942FFC00CC1C41 /* main.cpp in Sources */,
 				E57D6A9A1A942FFC00CC1C41 /* SortingCompetition.cpp in Sources */,
+				E50B3ACD1A9691D40088CDE2 /* Timing.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

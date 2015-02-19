@@ -126,10 +126,11 @@ void SortingCompetition::sortData()
 // your sorting algorithm (in other words, did it sort properly?).
 void SortingCompetition::outputData(const string& outputFileName)
 {
-    for (int i = 0; inputsize; i++)
-    {
-        cout << sortWords[i] << endl;
-    }
+    ofstream out(outputFileName);
+    
+    out << printArr(this->sortWords);
+    
+    out.close();
 }
 
 void SortingCompetition::countSort(char** &inputWords)
@@ -142,7 +143,7 @@ void SortingCompetition::countSort(char** &inputWords)
 
     for (int i = 0; i < inputsize; i++)
     {
-        ++count[inputWords[i][0]];
+        ++count[strlen(inputWords[i])];
     }
 
     for (int i = 1; i <= RANGE; ++i)
@@ -150,21 +151,25 @@ void SortingCompetition::countSort(char** &inputWords)
 
     for (int i = 0; i < inputsize; ++i)
     {
-        output[count[inputWords[i][0]] - 1] = new char[inputWords[i][0] + 1];
+        output[count[strlen(inputWords[i])] - 1] = new char[strlen(inputWords[i]) + 1];
         
-        strcpy(output[count[inputWords[i][0]] - 1], inputWords[i]);
+        strcpy(output[count[strlen(inputWords[i])] - 1], inputWords[i]);
         
-        --count[inputWords[i][0]];
+        --count[strlen(inputWords[i])];
     }
 
     delete[] inputWords;
     inputWords = output;
 }
 
-void SortingCompetition::printArr(char**& arr)
+string SortingCompetition::printArr(char**& arr)
 {
+    string output = "";
+    
     for (int i = 0; i < inputsize; i++)
     {
-        cout << arr[i] << endl;
+        output = output + arr[i] + "\n";
     }
+    
+    return output;
 }
