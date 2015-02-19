@@ -126,7 +126,7 @@ void SortingCompetition::sortData()
 // your sorting algorithm (in other words, did it sort properly?).
 void SortingCompetition::outputData(const string& outputFileName)
 {
-    for (int i = 0; sortWords[i]; i++)
+    for (int i = 0; inputsize; i++)
     {
         cout << sortWords[i] << endl;
     }
