@@ -10,6 +10,7 @@ void QuickSort::sortData()
     int left = 0;
     int right = getInputSize() - 1;
     quickSort(getSortWords(), left, right);
+    printArr(getSortWords());
 }
 
 
@@ -30,7 +31,7 @@ void QuickSort::quickSort(char** &inputWords, int left, int right)
           
         if (i <= j)
         {
-                // Swap
+            // Swap
             temp = inputWords[i];
             inputWords[i] = inputWords[j];
             inputWords[j] = temp;

@@ -128,7 +128,8 @@ void SortingCompetition::outputData(const string& outputFileName)
 {
     ofstream out(outputFileName);
     
-    out << toString(this->sortWords);
+    for (int i = 0; i < inputsize; i++)
+        out << sortWords[i] << endl;
     
     out.close();
 }
@@ -173,6 +174,15 @@ string SortingCompetition::toString(char**& arr)
     
     return output;
 }
+
+void SortingCompetition::printArr(char**& arr)
+{
+    for (int i = 0; i < inputsize; i++)
+    {
+        cout << arr[i] << endl;
+    }
+}
+
 
 char**& SortingCompetition::getSortWords()
 {
