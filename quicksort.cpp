@@ -25,9 +25,9 @@ void QuickSort::quickSort(char** &inputWords, int left, int right)
             while (strlen(inputWords[j]) > pivot)
                   j--;
             if (i <= j) {
-                  tmp = inputWords[i];
+                  temp = inputWords[i];
                   inputWords[i] = inputWords[j];
-                  inputWords[j] = inputWords;
+                  inputWords[j] = temp;
                   i++;
                   j--;
             }

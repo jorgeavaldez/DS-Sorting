@@ -10,6 +10,7 @@
 #include <chrono>
 #include <ctime>
 #include "SortingCompetition.h"
+#include "quicksort.h"
 
 using namespace std;
 using namespace chrono;
@@ -34,9 +35,9 @@ int main()
     cout << "\n" << input << endl;
 
     
-    SortingCompetition sc("/users/jorgev/projects/project4/" + input);
-    sc.readData();
-    sc.prepareData();
-    sc.sortData();
-    sc.outputData("/users/jorgev/projects/project4/" + output);
+    SortingCompetition* sc = new QuickSort(input);
+    sc->readData();
+    sc->prepareData();
+    sc->sortData();
+    sc->outputData(output);
 }
