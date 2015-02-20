@@ -90,9 +90,8 @@ public:
     // your sorting algorithm (in other words, did it sort properly?).
     void outputData(const string& outputFileName);
     
-<<<<<<< HEAD
-    string printArr(char**& arr);
-=======
+    string toString(char**& arr);
+
     void printArr(char**& arr);
 
     char**& getSortWords();
@@ -102,7 +101,6 @@ public:
     int& getInputSize();
 
     int& getInputCapacity();
->>>>>>> 1986efdc08500245363c54baef2e5f35541af6ac
 };
 
 #endif

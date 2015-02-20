@@ -128,7 +128,7 @@ void SortingCompetition::outputData(const string& outputFileName)
 {
     ofstream out(outputFileName);
     
-    out << printArr(this->sortWords);
+    out << toString(this->sortWords);
     
     out.close();
 }
@@ -162,7 +162,7 @@ void SortingCompetition::countSort(char** &inputWords)
     inputWords = output;
 }
 
-string SortingCompetition::printArr(char**& arr)
+string SortingCompetition::toString(char**& arr)
 {
     string output = "";
     
