@@ -51,8 +51,11 @@ SortingCompetition::SortingCompetition(const string& inputFileName)
 
 SortingCompetition::~SortingCompetition()
 {
-    delete[] inputWords;
-    delete[] sortWords;
+    if (inputWords)
+        delete[] inputWords;
+    
+    if (sortWords)
+        delete[] sortWords;
 }
 
 // change the input file name
@@ -102,7 +105,7 @@ bool SortingCompetition::readData()
 bool SortingCompetition::prepareData()
 {
     // Clear out supplementary data structure.
-    delete[] sortWords;
+    if (sortWords) delete[] sortWords;
     sortWords = new char*[inputsize];
     
     for (int i = 0; i < inputsize; i++)
@@ -159,7 +162,7 @@ void SortingCompetition::countSort(char** &inputWords)
         --count[strlen(inputWords[i])];
     }
 
-    delete[] inputWords;
+    if (inputWords) delete[] inputWords;
     inputWords = output;
 }
 
