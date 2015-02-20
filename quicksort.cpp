@@ -19,14 +19,14 @@ void QuickSort::quickSort(char** &inputWords, int left, int right)
     int i = left;
     int j = right;
     char* temp;
-    long pivot = strlen(inputWords[(left + right) / 2]);
+    char* pivot = inputWords[(left + right) / 2];
 
     while (i <= j)
     {
-        while (strlen(inputWords[i]) < pivot)
+        while (strcmp(inputWords[i], pivot) > 0)
             i++;
            
-        while (strlen(inputWords[j]) > pivot)
+        while (strcmp(inputWords[j], pivot) < 0)
             j--;
           
         if (i <= j)
