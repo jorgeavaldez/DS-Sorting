@@ -8,6 +8,7 @@ class QuickSort : public SortingCompetition
 public:
     QuickSort(const string &);
     void quickSort(char**&, int, int);
+    void quickSortAlpha(char** &, int, int);
     void sortData();
 };
 
