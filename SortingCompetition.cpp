@@ -105,7 +105,7 @@ bool SortingCompetition::readData()
 bool SortingCompetition::prepareData()
 {
     // Clear out supplementary data structure.
-    if (sortWords) delete[] sortWords;
+    //if (sortWords) delete[] sortWords;
     sortWords = new char*[inputsize];
     
     for (int i = 0; i < inputsize; i++)
