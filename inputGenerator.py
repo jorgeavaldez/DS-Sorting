@@ -1,12 +1,12 @@
 import random
 
-f = open('biginput.txt', 'w')
+f = open('input.txt', 'w')
 
 letters = 'abcdefghijklmnopqrstuvwxyz'
 capLetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
 ssize = random.randint(0, 90)
-inputsize = 10000000 #random.randint(0, 1000)
+inputsize = 1000 #random.randint(0, 1000)
 
 sentenceCount = 0
 iscap = False
