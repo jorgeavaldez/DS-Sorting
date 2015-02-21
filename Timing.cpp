@@ -30,7 +30,7 @@ int timeMain()
     time_t end_time = std::chrono::system_clock::to_time_t(end);
 
     //output the duration.
-    std::cout << "finished computation at " << &end_time << std::endl;
+    std::cout << "finished computation at " << end_time << std::endl;
     std::cout << "elapsed time: " << elapsed_seconds.count() << "s\n";
     
     return 0;

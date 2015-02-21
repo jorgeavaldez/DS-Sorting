@@ -2,8 +2,8 @@
 //  SortingCompetition.cpp
 //  Project3
 //
-//  Created by Jorge Valdez on 2/17/15.
-//  Copyright (c) 2015 Jorge Valdez. All rights reserved.
+//  Created by Microsoft R&D on 2/17/15.
+//  Copyright (c) 2015 Microsoft R&D. All rights reserved.
 //
 
 #include "SortingCompetition.h"
@@ -29,7 +29,10 @@ void SortingCompetition::resizeInput()
     }
     
     inputcapacity += 50;
-    delete[] inputWords;
+    
+    for (int i = 0; i < inputsize; i++)
+        delete[] inputWords[i];
+    
     inputWords = temp;
 }
 
@@ -52,10 +55,15 @@ SortingCompetition::SortingCompetition(const string& inputFileName)
 SortingCompetition::~SortingCompetition()
 {
     if (inputWords)
-        delete[] inputWords;
+        for (int i = 0; i < inputsize; i++)
+            delete[] inputWords[i];
     
     if (sortWords)
-        delete[] sortWords;
+        for (int i = 0; i < inputsize; i++)
+            delete[] sortWords[i];
+    
+    delete[] inputWords;
+    delete [] sortWords;
 }
 
 // change the input file name
@@ -75,6 +83,9 @@ bool SortingCompetition::readData()
 {
     ifstream in(inputFileName);
     
+    if (!in)
+        return false;
+    
     int i = 0;
     char* buffer = new char[91];
     
@@ -92,6 +103,8 @@ bool SortingCompetition::readData()
         inputsize++;
     }
     
+    delete[] buffer;
+    in.close();
     return true;
 }
 

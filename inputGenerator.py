@@ -1,6 +1,8 @@
+#!/usr/local/bin/python
+
 import random
 
-f = open('input.txt', 'w')
+f = open('valin.txt', 'w')
 
 letters = 'abcdefghijklmnopqrstuvwxyz'
 capLetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
