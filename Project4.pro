@@ -5,12 +5,14 @@ CONFIG -= qt
 
 SOURCES += main.cpp \
     SortingCompetition.cpp \
-    quicksort.cpp
+    quicksort.cpp \
+    bubblesort.cpp
 
 OTHER_FILES += \
     README.md
 
 HEADERS += \
     SortingCompetition.h \
-    quicksort.h
+    quicksort.h \
+    bubblesort.h
 
