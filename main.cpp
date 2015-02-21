@@ -11,6 +11,7 @@
 #include <ctime>
 #include "SortingCompetition.h"
 #include "quicksort.h"
+#include "bubblesort.h"
 
 using namespace std;
 using namespace chrono;
@@ -30,7 +31,7 @@ int main()
 
     std::chrono::time_point<std::chrono::system_clock> start, end;
     
-    SortingCompetition* sc = new QuickSort(input);
+    SortingCompetition* sc = new BubbleSort(input);
     if (!sc->readData()) return 1;
     if (!sc->prepareData()) return 1;
     

@@ -7,7 +7,7 @@ class BubbleSort : public SortingCompetition
 public:
     BubbleSort(const string&);
     void bubbleSortLength(char**&, int);
-    void bubbleSortAlpha(char**&, int);
+    void bubbleSortAlpha(char** &inputWords, int left, int size);
     void sortData();
 };
 
