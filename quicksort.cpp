@@ -1,18 +1,28 @@
 #include "quicksort.h"
-#include "SortingCompetition.h"
+#include "OurSortingCompetition.h"
 
-QuickSort::QuickSort(const string& inputFileName):SortingCompetition(inputFileName)
+// Constructs an instance of OurSortingCompetition where sortData implements
+// a quicksort in the data set.
+QuickSort::QuickSort(const string& inputFileName):OurSortingCompetition(inputFileName)
 {
 }
 
+// The overridden OurSortingCompetition sortData method.
+// Implements a quicksort first by length and then
+// alphabetically.
 void QuickSort::sortData()
 {
     int left = 0;
     int right = getInputSize() - 1;
+    
     quickSort(getSortWords(), left, right);
     
     // By alpha
     left = 0;
+    
+    // Traverses through the sorted array to find chunks that are of
+    // the same length.
+    // It then sorts the same size chunks alphabetically.
     for (int i = 1; i < getInputSize(); i++)
     {
         if (strlen(getSortWords()[i - 1]) != strlen(getSortWords()[i]))
@@ -21,11 +31,12 @@ void QuickSort::sortData()
             left = i;
         }
     }
-    
-    printArr(getSortWords());
 }
 
-
+// This quicksorts by size.
+// inputWords is the array to be sorted, passed by reference.
+// left is the first index, right is the last index.
+// The pivot is calculated using these indeces.
 void QuickSort::quickSort(char** &inputWords, int left, int right)
 {
     int i = left;
@@ -60,6 +71,9 @@ void QuickSort::quickSort(char** &inputWords, int left, int right)
         quickSort(inputWords, i, right);
 }
 
+// Same as regular quickSort, except sorts alphabetically.
+// inputWords is the array to be sorted, passed by reference.
+// left is the first index, right is the last index.
 void QuickSort::quickSortAlpha(char** &inputWords, int left, int right)
 {
     int i = left;

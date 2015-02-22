@@ -1,6 +1,6 @@
 #include "bubblesort.h"
 
-BubbleSort::BubbleSort(const string& inputFileName):SortingCompetition(inputFileName)
+BubbleSort::BubbleSort(const string& inputFileName):OurSortingCompetition(inputFileName)
 {
 }
 

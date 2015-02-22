@@ -31,7 +31,7 @@ int main()
 
     std::chrono::time_point<std::chrono::system_clock> start, end;
     
-    SortingCompetition* sc = new BubbleSort(input);
+    SortingCompetition* sc = new SortingCompetition(input);
     if (!sc->readData()) return 1;
     if (!sc->prepareData()) return 1;
     

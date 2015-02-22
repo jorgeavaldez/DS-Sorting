@@ -1,8 +1,8 @@
 #ifndef BUBBLESORT_H
 #define BUBBLESORT_H
-#include "SortingCompetition.h"
+#include "OurSortingCompetition.h"
 
-class BubbleSort : public SortingCompetition
+class BubbleSort : public OurSortingCompetition
 {
 public:
     BubbleSort(const string&);

@@ -1,13 +1,13 @@
 //
-//  SortingCompetition.h
+//  OurSortingCompetition.h
 //  Project3
 //
 //  Created by Jorge Valdez on 2/17/15.
 //  Copyright (c) 2015 Jorge Valdez. All rights reserved.
 //
 
-#ifndef SortingCompetition_h
-#define SortingCompetition_h
+#ifndef OurSortingCompetition_h
+#define OurSortingCompetition_h
 
 #include <iostream>
 #include <string>
@@ -17,12 +17,12 @@
 
 using namespace std;
 
-class SortingCompetition
+class OurSortingCompetition
 {
 private:
     // you are free to determine your own internal
     // implementation with the following stipulations:
-    
+
     // 1) when the prepare method is called, you must make a
     // copy of the original dataset into another instance-level
     // data structure which will be used by the sort method. This will
@@ -53,10 +53,10 @@ public:
     
     // basic constructor that accepts an input
     // file name
-    SortingCompetition(const string& inputFileName);
+    OurSortingCompetition(const string& inputFileName);
     
     // basic destructor
-    ~SortingCompetition();
+    ~OurSortingCompetition();
     
     // change the input file name
     void setFileName(const string& inputFileName);
@@ -85,25 +85,21 @@ public:
     // THIS IS THE FUNCTION THAT WILL BE TIMED.
     virtual void sortData();
     
-    void quickSort(char** &inputWords, int left, int right);
-    
-    void quickSortAlpha(char** &inputWords, int left, int right);
-    
     // using outputFileName, write the "sorted" data structure
     // to the file. This will be used to test the validity of
     // your sorting algorithm (in other words, did it sort properly?).
     void outputData(const string& outputFileName);
     
     string toString(char**& arr);
-    
+
     void printArr(char**& arr);
-    
+
     char**& getSortWords();
-    
+
     char**& getInputWords();
-    
+
     int& getInputSize();
-    
+
     int& getInputCapacity();
 };
 
