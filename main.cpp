@@ -16,19 +16,26 @@
 using namespace std;
 using namespace chrono;
 
-int main()
+int main(int argv, char** argc)
 {
     string input;
     string output;
     
-    cout << "Please enter the input file name: ";
-    cin >> input;
-    cout << "\n" << input << endl;
+    if (argv < 3)
+    {
+        cout << "\nIncorrect number of parameters!!!" << endl;
+        
+        cout << "Correct usage is:" << endl;
+        
+        cout << "\t$ ./a.out inputFileName outputFileName\n" << endl;
+        
+        return 1;
+    }
     
-    cout << "Please enter the output file name: ";
-    cin >> output;
-    cout << "\n" << input << endl;
-
+    input = argc[1];
+    
+    output = argc[2];
+    
     std::chrono::time_point<std::chrono::system_clock> start, end;
     
     SortingCompetition* sc = new SortingCompetition(input);
