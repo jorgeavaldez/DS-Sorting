@@ -21,6 +21,8 @@ int main(int argv, char** argc)
     string input;
     string output;
     
+    cout << "\nSorting Competition: Project 4\nBy Jorge Valdez and Jayce Miller" << endl;
+    
     if (argv < 3)
     {
         cout << "\nIncorrect number of parameters!!!" << endl;
