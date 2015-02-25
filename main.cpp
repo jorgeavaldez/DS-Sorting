@@ -14,7 +14,7 @@
 #include "bubblesort.h"
 
 using namespace std;
-using namespace chrono;
+using namespace std::chrono;
 
 int main(int argv, char** argc)
 {
@@ -38,7 +38,7 @@ int main(int argv, char** argc)
     
     output = argc[2];
     
-    std::chrono::time_point<std::chrono::system_clock> start, end;
+    time_point<system_clock> start, end;
     
     SortingCompetition* sc = new SortingCompetition(input);
     if (!sc->readData()) return 1;

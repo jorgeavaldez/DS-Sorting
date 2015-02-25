@@ -19,7 +19,7 @@ using namespace std;
 
 void SortingCompetition::resizeInput()
 {
-    char** temp = new char*[inputcapacity + 50];
+    char** temp = new char*[inputcapacity * 2];
     
     for (int i = 0; i < inputsize; i++)
     {
@@ -28,7 +28,7 @@ void SortingCompetition::resizeInput()
         strcpy(temp[i], inputWords[i]);
     }
     
-    inputcapacity += 50;
+    inputcapacity *= 2;
     
     for (int i = 0; i < inputsize; i++)
         delete[] inputWords[i];
@@ -81,28 +81,32 @@ void SortingCompetition::setFileName(const string &inputFileName)
 // in the 5th place in your structure.
 bool SortingCompetition::readData()
 {
+    cout << "in read data" << endl;
     ifstream in(inputFileName);
     
-    if (!in)
+    if (!in) {
+        cout << "Unable to open file" << endl;
         return false;
+    }
+
     
     int i = 0;
     char* buffer = new char[91];
+    cout << "about to enter while loop" << endl;
     
-    while (!in.eof())
+    while (in >> buffer)
     {
         if (inputsize == inputcapacity)
             resizeInput();
         
-        in >> buffer;
-        
+
         inputWords[i] = new char[strlen(buffer) + 1];
         strcpy(inputWords[i], buffer);
         
         i++;
         inputsize++;
     }
-    
+    cout << "about to close file" << endl;
     delete[] buffer;
     in.close();
     return true;
@@ -119,6 +123,7 @@ bool SortingCompetition::prepareData()
 {
     // Clear out supplementary data structure.
     //if (sortWords) delete[] sortWords;
+    cout << "in prepare data" << endl;
     sortWords = new char*[inputsize];
     
     for (int i = 0; i < inputsize; i++)
@@ -134,6 +139,7 @@ bool SortingCompetition::prepareData()
 // THIS IS THE FUNCTION THAT WILL BE TIMED.
 void SortingCompetition::sortData()
 {
+    cout << "in sortData" << endl;
     int left = 0;
     int right = getInputSize() - 1;
     
