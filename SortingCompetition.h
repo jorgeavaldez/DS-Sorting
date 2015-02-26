@@ -96,6 +96,10 @@ public:
     void selectionSort(char** &inputWords, int size);
 
     void selectionSortAlpha(char** &inputWords, int, int size);
+
+    void shellSort(char** &inputWords, int size);
+
+    void shellSortAlpha(char** &inputWords, int start, int size);
     
     // using outputFileName, write the "sorted" data structure
     // to the file. This will be used to test the validity of

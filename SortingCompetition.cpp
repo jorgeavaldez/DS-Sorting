@@ -146,7 +146,9 @@ void SortingCompetition::sortData()
     int low = 0;
     int high = getInputSize() - 1;
 
-    selectionSort(getSortWords(), getInputSize());
+    //selectionSort(getSortWords(), getInputSize());
+
+    shellSort(getSortWords(), getInputSize());
 
 //    mergeSort(getSortWords(),low, high);
     
@@ -158,11 +160,13 @@ void SortingCompetition::sortData()
     // Traverses through the sorted array to find chunks that are of
     // the same length.
     // It then sorts the same size chunks alphabetically.
+    cout << "about to enter for loop" << endl;
     for (int i = 1; i < getInputSize(); i++)
     {
         if (strlen(getSortWords()[i - 1]) != strlen(getSortWords()[i]))
         {
-            selectionSortAlpha(getSortWords(), start, i - 1);
+            shellSortAlpha(getSortWords(), start, i - 1);
+            //selectionSortAlpha(getSortWords(), start, i - 1);
             //quickSortAlpha(getSortWords(), left, i - 1);
             start = i;
         }
@@ -382,8 +386,11 @@ void SortingCompetition::merge(char** &inputWords, int low, int high, int mid)
 }
 
 void SortingCompetition::selectionSort(char** &inputWords, int size) {
+    cout << "in selectionSort" << endl;
     int i, j, minIndex;
     char* temp;
+    cout << "selectionSort for loop" << endl;
+    cout << "size is " << size << endl;
     for (i = 0; i < size - 1; i++) {
         minIndex = i;
         for (j = i + 1; j < size; j++)
@@ -395,6 +402,7 @@ void SortingCompetition::selectionSort(char** &inputWords, int size) {
             inputWords[minIndex] = temp;
         }
     }
+    cout << "out of for loop" << endl;
 }
 
 void SortingCompetition::selectionSortAlpha(char** &inputWords, int start, int size) {
@@ -414,3 +422,31 @@ void SortingCompetition::selectionSortAlpha(char** &inputWords, int start, int s
     }
 }
 
+
+void SortingCompetition::shellSort(char** &inputWords, int size)
+{
+    int gap, i, j;
+    char* temp;
+
+    for (gap = size/2; gap > 0; gap /= 2)
+        for (i = gap; i < size; i++)
+            for (j=i-gap; j>=0 && strlen(inputWords[j])>strlen(inputWords[j+gap]); j-=gap) {
+                temp = inputWords[j];
+                inputWords[j] = inputWords[j+gap];
+                inputWords[j+gap] = temp;
+            }
+}
+
+void SortingCompetition::shellSortAlpha(char** &inputWords, int start, int size)
+{
+    int gap, i, j;
+    char* temp;
+
+    for (gap = size/2; gap > 0; gap /= 2)
+        for (i = gap; i < size; i++)
+            for (j=i-gap; j>=0 && strcmp(inputWords[j],inputWords[j+gap]) > 0; j-=gap) {
+                temp = inputWords[j];
+                inputWords[j] = inputWords[j+gap];
+                inputWords[j+gap] = temp;
+            }
+}

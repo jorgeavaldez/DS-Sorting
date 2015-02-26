@@ -34,3 +34,7 @@ LSD Radix, which stands for "Least Significant Digit" Radix Sort.
 #### g++ Compiler Flags
 > -fopenmp
 > -std=c++11
+
+### Selection Sort
+- Works fine with small data set, but takes forever to run with larger set
+- for loop within function is inefficient and slows down drastically as data set size increases
