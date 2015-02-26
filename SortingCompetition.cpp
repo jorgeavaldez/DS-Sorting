@@ -142,12 +142,19 @@ void SortingCompetition::sortData()
     cout << "in sortData" << endl;
     int left = 0;
     int right = getInputSize() - 1;
+
+    int low = 0;
+    int high = getInputSize() - 1;
+
+    selectionSort(getSortWords(), getInputSize());
+
+//    mergeSort(getSortWords(),low, high);
     
-    quickSort(getSortWords(), left, right);
+//    quickSort(getSortWords(), left, right);
     
-    // By alpha
-    left = 0;
-    
+//    // By alpha
+//    left = 0;
+    int start = 0;
     // Traverses through the sorted array to find chunks that are of
     // the same length.
     // It then sorts the same size chunks alphabetically.
@@ -155,10 +162,12 @@ void SortingCompetition::sortData()
     {
         if (strlen(getSortWords()[i - 1]) != strlen(getSortWords()[i]))
         {
-            quickSortAlpha(getSortWords(), left, i - 1);
-            left = i;
+            selectionSortAlpha(getSortWords(), start, i - 1);
+            //quickSortAlpha(getSortWords(), left, i - 1);
+            start = i;
         }
     }
+    printArr(getSortWords());
 }
 
 // This quicksorts by size.
@@ -316,3 +325,92 @@ int& SortingCompetition::getInputSize(){
 int& SortingCompetition::getInputCapacity(){
     return this->inputcapacity;
 }
+
+void SortingCompetition::mergeSort(char** &inputWords, int low, int high)
+{
+    cout << "in mergeSort" << endl;
+    int mid;
+    if (low < high)
+    {
+        mid=(low+high)/2;
+        mergeSort(inputWords,low,mid);
+        mergeSort(inputWords,mid+1,high);
+        merge(inputWords,low,high,mid);
+    }
+    return;
+}
+
+void SortingCompetition::merge(char** &inputWords, int low, int high, int mid)
+{
+    cout << "in merge" << endl;
+    int i, j, k;
+    char* exchanger[91];
+    i = low;
+    k = low;
+    j = mid + 1;
+    while (i <= mid && j <= high)
+    {
+        if (strlen(inputWords[i]) < strlen(inputWords[j]))
+        {
+            exchanger[k] = inputWords[i];
+            k++;
+            i++;
+        }
+        else
+        {
+            exchanger[k] = inputWords[j];
+            k++;
+            j++;
+        }
+    }
+    while (i <= mid)
+    {
+        exchanger[k] = inputWords[i];
+        k++;
+        i++;
+    }
+    while (j <= high)
+    {
+        exchanger[k] = inputWords[j];
+        k++;
+        j++;
+    }
+    for (i = low; i < k; i++)
+    {
+        inputWords[i] = exchanger[i];
+    }
+}
+
+void SortingCompetition::selectionSort(char** &inputWords, int size) {
+    int i, j, minIndex;
+    char* temp;
+    for (i = 0; i < size - 1; i++) {
+        minIndex = i;
+        for (j = i + 1; j < size; j++)
+            if (strlen(inputWords[j]) < strlen(inputWords[minIndex]))
+                minIndex = j;
+        if (minIndex != i) {
+            temp = inputWords[i];
+            inputWords[i] = inputWords[minIndex];
+            inputWords[minIndex] = temp;
+        }
+    }
+}
+
+void SortingCompetition::selectionSortAlpha(char** &inputWords, int start, int size) {
+    int i = start;
+    int j, minIndex;
+    char* temp;
+    for (start; start < size - 1; start++) {
+        minIndex = start;
+        for (j = start + 1; j < size; j++)
+            if (strcmp(inputWords[j],inputWords[minIndex]) < 0)
+                minIndex = j;
+        if (minIndex != start) {
+            temp = inputWords[start];
+            inputWords[start] = inputWords[minIndex];
+            inputWords[minIndex] = temp;
+        }
+    }
+}
+

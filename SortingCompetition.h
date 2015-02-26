@@ -88,6 +88,14 @@ public:
     void quickSort(char** &inputWords, int left, int right);
     
     void quickSortAlpha(char** &inputWords, int left, int right);
+
+    void mergeSort(char** &inputWords, int low, int high);
+
+    void merge(char** &inputWords, int low, int high, int mid);
+
+    void selectionSort(char** &inputWords, int size);
+
+    void selectionSortAlpha(char** &inputWords, int, int size);
     
     // using outputFileName, write the "sorted" data structure
     // to the file. This will be used to test the validity of
