@@ -16,7 +16,7 @@ void BubbleSort::sortData()
     {
         if (strlen(getSortWords()[i - 1]) != strlen(getSortWords()[i]))
         {
-            cout << "iside if statement" << endl;
+            cout << "inside if statement" << endl;
             bubbleSortAlpha(getSortWords(), left, i - 1);
             cout << "attempted alpha sort" << endl;
             left = i;

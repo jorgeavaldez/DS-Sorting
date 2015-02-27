@@ -101,6 +101,15 @@ public:
 
     void shellSortAlpha(char** &inputWords, int start, int size);
     
+    // Multikey Quicksort
+    int min(int, int);
+    
+    void vecswap(int, int, int, char** &);
+    
+    void ssort(char** &, int);
+    
+    void ssort1(char** &, int, int);
+    
     // using outputFileName, write the "sorted" data structure
     // to the file. This will be used to test the validity of
     // your sorting algorithm (in other words, did it sort properly?).
