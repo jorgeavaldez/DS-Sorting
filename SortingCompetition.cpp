@@ -148,11 +148,13 @@ void SortingCompetition::sortData()
 
     //selectionSort(getSortWords(), getInputSize());
 
-    shellSort(getSortWords(), getInputSize());
+    //shellSort(getSortWords(), getInputSize());
+
+    insertionSort(getSortWords(), getInputSize());
 
 //    mergeSort(getSortWords(),low, high);
     
-//    quickSort(getSortWords(), left, right);
+ //   quickSort(getSortWords(), left, right);
     
 //    // By alpha
 //    left = 0;
@@ -165,13 +167,15 @@ void SortingCompetition::sortData()
     {
         if (strlen(getSortWords()[i - 1]) != strlen(getSortWords()[i]))
         {
-            shellSortAlpha(getSortWords(), start, i - 1);
+            //shellSortAlpha(getSortWords(), start, i - 1);
+            insertionSortAlpha(getSortWords(), start, i);
             //selectionSortAlpha(getSortWords(), start, i - 1);
             //quickSortAlpha(getSortWords(), left, i - 1);
             start = i;
+            //left = i;
         }
     }
-    printArr(getSortWords());
+    //printArr(getSortWords());
 }
 
 // This quicksorts by size.
@@ -441,12 +445,40 @@ void SortingCompetition::shellSortAlpha(char** &inputWords, int start, int size)
 {
     int gap, i, j;
     char* temp;
-
-    for (gap = size/2; gap > 0; gap /= 2)
+    cout << "enters shellSortAlpha" << endl;
+    for (gap = ((size-start)/2) + start; gap > start; gap /= 2)
         for (i = gap; i < size; i++)
-            for (j=i-gap; j>=0 && strcmp(inputWords[j],inputWords[j+gap]) > 0; j-=gap) {
+            for (j=i-gap; j>=start && strcmp(inputWords[j],inputWords[j+gap]) > 0; j-=gap) {
                 temp = inputWords[j];
                 inputWords[j] = inputWords[j+gap];
                 inputWords[j+gap] = temp;
             }
+}
+
+void SortingCompetition:: insertionSort(char** &inputWords, int size) {
+    int i, j;
+    char* temp;
+    for (i = 1; i < size; i++) {
+        j = i;
+        while (j > 0 && strlen(inputWords[j - 1]) > strlen(inputWords[j])) {
+            temp = inputWords[j];
+            inputWords[j] = inputWords[j - 1];
+            inputWords[j - 1] = temp;
+            j--;
+        }
+    }
+}
+
+void SortingCompetition:: insertionSortAlpha(char** &inputWords, int start, int size) {
+    int i, j;
+    char* temp;
+    for (i = start - 1; i < size; i++) {
+        j = i;
+        while (j > start && strcmp(inputWords[j - 1],inputWords[j]) > 0) {
+            temp = inputWords[j];
+            inputWords[j] = inputWords[j - 1];
+            inputWords[j - 1] = temp;
+            j--;
+        }
+    }
 }

@@ -100,6 +100,10 @@ public:
     void shellSort(char** &inputWords, int size);
 
     void shellSortAlpha(char** &inputWords, int start, int size);
+
+    void insertionSort(char** &inputWords, int size);
+
+    void insertionSortAlpha(char** &inputWords, int start, int size);
     
     // using outputFileName, write the "sorted" data structure
     // to the file. This will be used to test the validity of
