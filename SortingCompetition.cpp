@@ -142,40 +142,46 @@ bool SortingCompetition::prepareData()
 void SortingCompetition::sortData()
 {
 //    cout << "in sortData" << endl;
-//    int left = 0;
-//    int right = getInputSize() - 1;
+    int left = 0;
+    int right = getInputSize() - 1;
 //
-//    int low = 0;
-//    int high = getInputSize() - 1;
+    int low = 0;
+    int high = getInputSize() - 1;
 //
-//    //selectionSort(getSortWords(), getInputSize());
+//      selectionSort(getSortWords(), getInputSize());
+
+//    insertionSort(getSortWords(), getInputSize());
+
+    bubbleSortLength(getSortWords(), getInputSize());
 //
 //    shellSort(getSortWords(), getInputSize());
 //
-////    mergeSort(getSortWords(),low, high);
+//      mergeSort(getSortWords(),low, high);
 //    
-////    quickSort(getSortWords(), left, right);
+//    quickSort(getSortWords(), left, right);
 //    
 ////    // By alpha
 ////    left = 0;
 //    
-//    int start = 0;
+    int start = 0;
 //    
 //    // Traverses through the sorted array to find chunks that are of
 //    // the same length.
 //    // It then sorts the same size chunks alphabetically.
 //    cout << "about to enter for loop" << endl;
-//    for (int i = 1; i < getInputSize(); i++)
-//    {
-//        if (strlen(getSortWords()[i - 1]) != strlen(getSortWords()[i]))
-//        {
-//            shellSortAlpha(getSortWords(), start, i - 1);
-//            //selectionSortAlpha(getSortWords(), start, i - 1);
-//            //quickSortAlpha(getSortWords(), left, i - 1);
-//            start = i;
-//        }
-//    }
-    ssort(getSortWords(), getInputSize());
+    for (int i = 1; i < getInputSize(); i++)
+    {
+        if (strlen(getSortWords()[i - 1]) != strlen(getSortWords()[i]))
+        {
+            //shellSortAlpha(getSortWords(), start, i - 1 - start);
+//            selectionSortAlpha(getSortWords(), start, i - 1);
+//          quickSortAlpha(getSortWords(), left, i - 1);
+            bubbleSortAlpha(getSortWords(), start, i - 1);
+//            insertionSortAlpha(getSortWords(), start, i -1);
+            start = i;
+        }
+    }
+    //ssort(getSortWords(), getInputSize());
     
     printArr(getSortWords());
 }
@@ -234,7 +240,17 @@ int& SortingCompetition::getInputCapacity()
     return this->inputcapacity;
 }
 
-// Multikey Quicksort
+/*
+
+ ****************************************************************
+ ****************************************************************
+ **                                                            **
+ **                     Multikey  QuickSort Shit               **
+ **                                                            **
+ ****************************************************************
+ ****************************************************************
+
+*/
 
 int SortingCompetition::min(int a,int b)
 {
@@ -455,79 +471,6 @@ void SortingCompetition::countSort(char** &inputWords)
  ****************************************************************
  ****************************************************************
  **                                                            **
- **                      Merge Sort Shit                       **
- **                                                            **
- ****************************************************************
- ****************************************************************
- 
-*/
-
-void SortingCompetition::mergeSort(char** &inputWords, int low, int high)
-{
-    cout << "in mergeSort" << endl;
-    int mid;
-    if (low < high)
-    {
-        mid=(low+high)/2;
-        mergeSort(inputWords,low,mid);
-        mergeSort(inputWords,mid+1,high);
-        merge(inputWords,low,high,mid);
-    }
-    return;
-}
-
-void SortingCompetition::merge(char** &inputWords, int low, int high, int mid)
-{
-    cout << "in merge" << endl;
-    int i, j, k;
-    char* exchanger[91];
-    
-    i = low;
-    k = low;
-    j = mid + 1;
-    
-    while (i <= mid && j <= high)
-    {
-        if (strlen(inputWords[i]) < strlen(inputWords[j]))
-        {
-            exchanger[k] = inputWords[i];
-            k++;
-            i++;
-        }
-        
-        else
-        {
-            exchanger[k] = inputWords[j];
-            k++;
-            j++;
-        }
-    }
-    
-    while (i <= mid)
-    {
-        exchanger[k] = inputWords[i];
-        k++;
-        i++;
-    }
-    
-    while (j <= high)
-    {
-        exchanger[k] = inputWords[j];
-        k++;
-        j++;
-    }
-    
-    for (i = low; i < k; i++)
-    {
-        inputWords[i] = exchanger[i];
-    }
-}
-
-/*
- 
- ****************************************************************
- ****************************************************************
- **                                                            **
  **                    Selection Sort Shit                     **
  **                                                            **
  ****************************************************************
@@ -588,46 +531,16 @@ void SortingCompetition::selectionSortAlpha(char** &inputWords, int start, int s
 }
 
 /*
- 
+
 ****************************************************************
 ****************************************************************
 **                                                            **
-**                      Shell Sort Shit                       **
+**                  Insertion Sort Shit                       **
 **                                                            **
 ****************************************************************
 ****************************************************************
- 
+
 */
-
-void SortingCompetition::shellSort(char** &inputWords, int size)
-{
-    int gap, i, j;
-    char* temp;
-
-    for (gap = size / 2; gap > 0; gap /= 2)
-        for (i = gap; i < size; i++)
-            for (j = i - gap; j >= 0 && strlen(inputWords[j]) > strlen(inputWords[j + gap]); j -= gap)
-            {
-                temp = inputWords[j];
-                inputWords[j] = inputWords[j + gap];
-                inputWords[j + gap] = temp;
-            }
-}
-
-void SortingCompetition::shellSortAlpha(char** &inputWords, int start, int size)
-{
-    int gap, i, j;
-    char* temp;
-
-    cout << "enters shellSortAlpha" << endl;
-    for (gap = ((size-start)/2) + start; gap > start; gap /= 2)
-        for (i = gap; i < size; i++)
-            for (j=i-gap; j>=start && strcmp(inputWords[j],inputWords[j+gap]) > 0; j-=gap) {
-                temp = inputWords[j];
-                inputWords[j] = inputWords[j + gap];
-                inputWords[j + gap] = temp;
-            }
-}
 
 void SortingCompetition:: insertionSort(char** &inputWords, int size) {
     int i, j;
@@ -655,4 +568,168 @@ void SortingCompetition:: insertionSortAlpha(char** &inputWords, int start, int 
             j--;
         }
     }
+}
+
+/*
+
+****************************************************************
+****************************************************************
+**                                                            **
+**                  Bubble Sort Shit                          **
+**                                                            **
+****************************************************************
+****************************************************************
+
+*/
+
+void SortingCompetition::bubbleSortLength(char** &inputWords, int size)
+{
+    char* temp;
+
+    for (int i = 0; i < size; i++)
+        for (int j = 0; j < size - 1; j++)
+            if (strlen(inputWords[j]) > strlen(inputWords[j + 1]))
+            {
+                temp = inputWords[j];
+                inputWords[j] = inputWords[j + 1];
+                inputWords[j + 1] = temp;
+            }
+}
+
+
+void SortingCompetition::bubbleSortAlpha(char** &inputWords, int start, int size)
+{
+    char* temp;
+
+    for (int i = start; i < size; i++)
+        for (int j = start; j < size - 1; j++)
+            if (strcmp(inputWords[j], inputWords[j + 1]) > 0)
+            {
+                temp = inputWords[j];
+                inputWords[j] = inputWords[j+1];
+                inputWords[j+1] = temp;
+            }
+}
+
+/*
+
+ ****************************************************************
+ ****************************************************************
+ **                                                            **
+ **                      Merge Sort Shit                       **
+ **                                                            **
+ ****************************************************************
+ ****************************************************************
+
+*/
+
+void SortingCompetition::mergeSort(char** &inputWords, int low, int high)
+{
+    cout << "in mergeSort" << endl;
+    int mid;
+    if (low < high)
+    {
+        mid=(low+high)/2;
+        mergeSort(inputWords,low,mid);
+        mergeSort(inputWords,mid+1,high);
+        merge(inputWords,low,high,mid);
+    }
+    return;
+}
+
+void SortingCompetition::merge(char** &inputWords, int low, int high, int mid)
+{
+    cout << "in merge" << endl;
+    int i, j, k;
+    char* exchanger[91];
+
+    i = low;
+    k = low;
+    j = mid + 1;
+
+    while (i <= mid && j <= high)
+    {
+        if (strlen(inputWords[i]) < strlen(inputWords[j]))
+        {
+            exchanger[k] = inputWords[i];
+            k++;
+            i++;
+        }
+
+        else
+        {
+            exchanger[k] = inputWords[j];
+            k++;
+            j++;
+        }
+    }
+
+    while (i <= mid)
+    {
+        exchanger[k] = inputWords[i];
+        k++;
+        i++;
+    }
+
+    while (j <= high)
+    {
+        exchanger[k] = inputWords[j];
+        k++;
+        j++;
+    }
+
+    for (i = low; i < k; i++)
+    {
+        inputWords[i] = exchanger[i];
+    }
+}
+
+/*
+
+****************************************************************
+****************************************************************
+**                                                            **
+**                      Shell Sort Shit                       **
+**                                                            **
+****************************************************************
+****************************************************************
+
+*/
+
+void SortingCompetition::shellSort(char** &inputWords, int size)
+{
+    int gap, i, j;
+    char* temp;
+
+    for (gap = size / 2; gap > 0; gap /= 2)
+        for (i = gap; i < size; i++)
+            for (j = i - gap; j >= 0 && combinedSorting(inputWords[j], inputWords[j+gap]); j -= gap)
+            {
+                temp = inputWords[j];
+                inputWords[j] = inputWords[j + gap];
+                inputWords[j + gap] = temp;
+            }
+}
+
+void SortingCompetition::shellSortAlpha(char** &inputWords, int start, int size)
+{
+    int gap, i, j;
+    char* temp;
+
+    cout << "enters shellSortAlpha" << endl;
+    for (gap = (size/2) + start; gap > start; gap = (gap+start)/2)
+        for (i = gap; i < size + start; i++)
+        {
+            temp = inputWords[i];
+            for (j=i; j>=gap && strcmp(inputWords[j-gap+start],temp) > 0; j-=gap+start) {
+                inputWords[j] = inputWords[j-gap+start];
+            }
+            inputWords[j] = temp;
+        }
+}
+
+bool SortingCompetition::combinedSorting(char* a, char* b) {
+    if(strlen(a) > strlen(b)) return true;
+    else if(strcmp(a, b) > 0) return true;
+    else return false;
 }

@@ -101,9 +101,15 @@ public:
 
     void shellSortAlpha(char** &inputWords, int start, int size);
 
+    bool combinedSorting(char* a, char* b);
+
     void insertionSort(char** &inputWords, int size);
 
     void insertionSortAlpha(char** &inputWords, int start, int size);
+
+    void bubbleSortLength(char** &inputWords, int size);
+
+    void bubbleSortAlpha(char** &inputWords, int left, int size);
     
     // Multikey Quicksort
     int min(int, int);
