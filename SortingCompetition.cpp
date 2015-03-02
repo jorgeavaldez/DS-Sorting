@@ -152,7 +152,7 @@ void SortingCompetition::sortData()
 
 //    insertionSort(getSortWords(), getInputSize());
 
-      bubbleSortLength(getSortWords(), getInputSize());
+//    bubbleSortLength(getSortWords(), getInputSize());
 //
 //    shellSort(getSortWords(), getInputSize());
 //
@@ -163,6 +163,8 @@ void SortingCompetition::sortData()
       // By alpha
 //    left = 0;
 //
+    
+    countSort(getSortWords());
     int start = 0;
 
     // Traverses through the sorted array to find chunks that are of
@@ -177,9 +179,16 @@ void SortingCompetition::sortData()
 //            quickSortAlpha(getSortWords(), left, i - 1);
 //            bubbleSortAlpha(getSortWords(), start, i - 1);
 //            insertionSortAlpha(getSortWords(), start, i -1);
-              start = i;
+            
+            // Multikey Quicksort
+            char** shiftedArray = getSortWords() + start;
+            ssort(shiftedArray, i - start);
+            
+            start = i;
         }
     }
+    
+    cout << "Bitch pls" << endl;
     //ssort(getSortWords(), getInputSize());
 
 //    printArr(getSortWords());
