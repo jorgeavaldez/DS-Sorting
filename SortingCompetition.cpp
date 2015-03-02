@@ -175,7 +175,7 @@ void SortingCompetition::sortData()
 //            shellSortAlpha(getSortWords(), start, i - 1 - start);
 //            selectionSortAlpha(getSortWords(), start, i - 1);
 //            quickSortAlpha(getSortWords(), left, i - 1);
-            bubbleSortAlpha(getSortWords(), start, i - 1);
+//            bubbleSortAlpha(getSortWords(), start, i - 1);
 //            insertionSortAlpha(getSortWords(), start, i -1);
               start = i;
         }
