@@ -116,9 +116,9 @@ public:
     
     void vecswap(int, int, int, char** &);
     
-    void ssort(char** &, int);
+    void ssort(char** &, int, int);
     
-    void ssort1(char** &, int, int);
+    void ssort1(char** &, int, int, int);
     
     // using outputFileName, write the "sorted" data structure
     // to the file. This will be used to test the validity of
