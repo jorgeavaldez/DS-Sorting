@@ -141,49 +141,48 @@ bool SortingCompetition::prepareData()
 // THIS IS THE FUNCTION THAT WILL BE TIMED.
 void SortingCompetition::sortData()
 {
-//    cout << "in sortData" << endl;
+    cout << "in sortData" << endl;
     int left = 0;
     int right = getInputSize() - 1;
-//
+
     int low = 0;
     int high = getInputSize() - 1;
-//
-//      selectionSort(getSortWords(), getInputSize());
+
+//    selectionSort(getSortWords(), getInputSize());
 
 //    insertionSort(getSortWords(), getInputSize());
 
-    bubbleSortLength(getSortWords(), getInputSize());
+      bubbleSortLength(getSortWords(), getInputSize());
 //
 //    shellSort(getSortWords(), getInputSize());
 //
-//      mergeSort(getSortWords(),low, high);
-//    
+//    mergeSort(getSortWords(),low, high);
+//
 //    quickSort(getSortWords(), left, right);
-//    
-////    // By alpha
-////    left = 0;
-//    
+//
+      // By alpha
+//    left = 0;
+//
     int start = 0;
-//    
-//    // Traverses through the sorted array to find chunks that are of
-//    // the same length.
-//    // It then sorts the same size chunks alphabetically.
-//    cout << "about to enter for loop" << endl;
+
+    // Traverses through the sorted array to find chunks that are of
+    // the same length.
+    // It then sorts the same size chunks alphabetically.
     for (int i = 1; i < getInputSize(); i++)
     {
         if (strlen(getSortWords()[i - 1]) != strlen(getSortWords()[i]))
         {
-            //shellSortAlpha(getSortWords(), start, i - 1 - start);
+//            shellSortAlpha(getSortWords(), start, i - 1 - start);
 //            selectionSortAlpha(getSortWords(), start, i - 1);
-//          quickSortAlpha(getSortWords(), left, i - 1);
+//            quickSortAlpha(getSortWords(), left, i - 1);
             bubbleSortAlpha(getSortWords(), start, i - 1);
 //            insertionSortAlpha(getSortWords(), start, i -1);
-            start = i;
+              start = i;
         }
     }
     //ssort(getSortWords(), getInputSize());
     
-    printArr(getSortWords());
+//    printArr(getSortWords());
 }
 
 // using outputFileName, write the "sorted" data structure
@@ -733,3 +732,6 @@ bool SortingCompetition::combinedSorting(char* a, char* b) {
     else if(strcmp(a, b) > 0) return true;
     else return false;
 }
+
+
+
