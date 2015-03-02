@@ -244,11 +244,8 @@ int& SortingCompetition::getInputCapacity()
  ****************************************************************
  ****************************************************************
  **                                                            **
-<<<<<<< HEAD
  **                       Fuck Sort Shit                       **
-=======
- **                     Multikey  QuickSort Shit               **
->>>>>>> 7d5204654b5ec9552a2d12328fd0906cbc3003f5
+ **                  Multikey QuickSort Shit                   **
  **                                                            **
  ****************************************************************
  ****************************************************************
@@ -274,15 +271,15 @@ void SortingCompetition::vecswap(int i, int j, int n, char**& x)
 }
 
 // char**& x, int n
-void SortingCompetition::ssort(char**& x, int left, int n)
+void SortingCompetition::ssort(char**& x, int n)
 {
-    // ssort1(x, n, 0);
+    ssort1(x, n, 0);
 
-    ssort1(x, n, left, 0);
+    // ssort1(x, n, left, 0);
 }
 
 // char**& x, int n, int depth
-void SortingCompetition::ssort1(char**& x, int n, int left, int depth)
+void SortingCompetition::ssort1(char**& x, int n, int depth)
 {
     int a, b, c, d, r, v;
 
@@ -290,8 +287,8 @@ void SortingCompetition::ssort1(char**& x, int n, int left, int depth)
         return;
 
     a = rand() % n;
-    swap(left, a);
-    v = i2c(left);
+    swap(0, a);
+    v = i2c(0);
     a = b = 1;
     c = d = n - 1;
 
@@ -328,22 +325,22 @@ void SortingCompetition::ssort1(char**& x, int n, int left, int depth)
     }
 
     r = min(a, b - a);
-    vecswap(left, b - r, r, x);
+    vecswap(0, b - r, r, x);
 
     r = min(d - c, n - d - 1);
     vecswap(b, n - r, r, x);
 
     r = b - a;
-    ssort1(x, r, left, depth);
+    ssort1(x, r, depth);
 
     char** temp = x + r;
 
     if (i2c(r) != 0)
-        ssort1(temp, a + n - d - 1, left, depth + 1);
+        ssort1(temp, a + n - d - 1, depth + 1);
 
     r = d - c;
     temp = x + n - r;
-    ssort1(temp, r, left, depth);
+    ssort1(temp, r, depth);
 }
 
 /*
@@ -517,12 +514,11 @@ void SortingCompetition::selectionSort(char** &inputWords, int size)
 
 void SortingCompetition::selectionSortAlpha(char** &inputWords, int start, int size)
 {
-    int i = start;
     int j, minIndex;
 
     char* temp;
 
-    for (start; start < size - 1; start++)
+    for (; start < size - 1; start++)
     {
         minIndex = start;
         for (j = start + 1; j < size; j++)
@@ -693,75 +689,7 @@ void SortingCompetition::merge(char** &inputWords, int low, int high, int mid)
 }
 
 /*
-<<<<<<< HEAD
 
- ****************************************************************
- ****************************************************************
- **                                                            **
- **                    Selection Sort Shit                     **
- **                                                            **
- ****************************************************************
- ****************************************************************
-
-*/
-
-void SortingCompetition::selectionSort(char** &inputWords, int size)
-{
-    cout << "in selectionSort" << endl;
-
-    int i, j, minIndex;
-    char* temp;
-
-    cout << "selectionSort for loop" << endl;
-    cout << "size is " << size << endl;
-
-    for (i = 0; i < size - 1; i++)
-    {
-        minIndex = i;
-
-        for (j = i + 1; j < size; j++)
-            if (strlen(inputWords[j]) < strlen(inputWords[minIndex]))
-                minIndex = j;
-
-        if (minIndex != i)
-        {
-            temp = inputWords[i];
-            inputWords[i] = inputWords[minIndex];
-            inputWords[minIndex] = temp;
-        }
-    }
-
-    cout << "out of for loop" << endl;
-}
-
-void SortingCompetition::selectionSortAlpha(char** &inputWords, int start, int size)
-{
-    int i = start;
-    int j, minIndex;
-
-    char* temp;
-
-    for (start; start < size - 1; start++)
-    {
-        minIndex = start;
-        for (j = start + 1; j < size; j++)
-            if (strcmp(inputWords[j],inputWords[minIndex]) < 0)
-                minIndex = j;
-
-        if (minIndex != start)
-        {
-            temp = inputWords[start];
-            inputWords[start] = inputWords[minIndex];
-            inputWords[minIndex] = temp;
-        }
-    }
-}
-
-/*
-
-=======
-
->>>>>>> 7d5204654b5ec9552a2d12328fd0906cbc3003f5
 ****************************************************************
 ****************************************************************
 **                                                            **
