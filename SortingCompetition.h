@@ -95,7 +95,7 @@ public:
 
     void selectionSort(char** &inputWords, int size);
 
-    void selectionSortAlpha(char** &inputWords, int, int size);
+    void selectionSortAlpha(char** &inputWords, int start, int size);
 
     void shellSort(char** &inputWords, int size);
 
