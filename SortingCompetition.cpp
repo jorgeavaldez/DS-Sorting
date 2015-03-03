@@ -141,29 +141,6 @@ bool SortingCompetition::prepareData()
 // THIS IS THE FUNCTION THAT WILL BE TIMED.
 void SortingCompetition::sortData()
 {
-    cout << "in sortData" << endl;
-    int left = 0;
-    int right = getInputSize() - 1;
-
-    int low = 0;
-    int high = getInputSize() - 1;
-
-//    selectionSort(getSortWords(), getInputSize());
-
-//    insertionSort(getSortWords(), getInputSize());
-
-//    bubbleSortLength(getSortWords(), getInputSize());
-//
-//    shellSort(getSortWords(), getInputSize());
-//
-//    mergeSort(getSortWords(),low, high);
-//
-//    quickSort(getSortWords(), left, right);
-//
-      // By alpha
-//    left = 0;
-//
-    
     countSort(getSortWords());
     int start = 0;
 
@@ -174,24 +151,12 @@ void SortingCompetition::sortData()
     {
         if (strlen(getSortWords()[i - 1]) != strlen(getSortWords()[i]))
         {
-//            shellSortAlpha(getSortWords(), start, i - 1 - start);
-//            selectionSortAlpha(getSortWords(), start, i - 1);
-//            quickSortAlpha(getSortWords(), left, i - 1);
-//            bubbleSortAlpha(getSortWords(), start, i - 1);
-//            insertionSortAlpha(getSortWords(), start, i -1);
-            
-            // Multikey Quicksort
             char** shiftedArray = getSortWords() + start;
             ssort(shiftedArray, i - start);
-            
+
             start = i;
         }
     }
-    
-    cout << "Bitch pls" << endl;
-    //ssort(getSortWords(), getInputSize());
-
-//    printArr(getSortWords());
 }
 
 // using outputFileName, write the "sorted" data structure
@@ -253,8 +218,8 @@ int& SortingCompetition::getInputCapacity()
  ****************************************************************
  ****************************************************************
  **                                                            **
- **                       Fuck Sort Shit                       **
- **                  Multikey QuickSort Shit                   **
+ **                                                            **
+ **                  Multikey QuickSort                        **
  **                                                            **
  ****************************************************************
  ****************************************************************
@@ -357,7 +322,7 @@ void SortingCompetition::ssort1(char**& x, int n, int depth)
  ****************************************************************
  ****************************************************************
  **                                                            **
- **                       QuickSort Shit                       **
+ **                       QuickSort                            **
  **                                                            **
  ****************************************************************
  ****************************************************************
@@ -444,7 +409,7 @@ void SortingCompetition::quickSortAlpha(char** &inputWords, int left, int right)
  ****************************************************************
  ****************************************************************
  **                                                            **
- **                      Count Sort Shit                       **
+ **                      Count Sort                            **
  **                                                            **
  ****************************************************************
  ****************************************************************
@@ -485,7 +450,7 @@ void SortingCompetition::countSort(char** &inputWords)
  ****************************************************************
  ****************************************************************
  **                                                            **
- **                    Selection Sort Shit                     **
+ **                    Selection Sort                          **
  **                                                            **
  ****************************************************************
  ****************************************************************
@@ -548,7 +513,7 @@ void SortingCompetition::selectionSortAlpha(char** &inputWords, int start, int s
 ****************************************************************
 ****************************************************************
 **                                                            **
-**                  Insertion Sort Shit                       **
+**                  Insertion Sort                            **
 **                                                            **
 ****************************************************************
 ****************************************************************
@@ -588,7 +553,7 @@ void SortingCompetition:: insertionSortAlpha(char** &inputWords, int start, int 
 ****************************************************************
 ****************************************************************
 **                                                            **
-**                  Bubble Sort Shit                          **
+**                  Bubble Sort                               **
 **                                                            **
 ****************************************************************
 ****************************************************************
@@ -629,7 +594,7 @@ void SortingCompetition::bubbleSortAlpha(char** &inputWords, int start, int size
  ****************************************************************
  ****************************************************************
  **                                                            **
- **                      Merge Sort Shit                       **
+ **                      Merge Sort                            **
  **                                                            **
  ****************************************************************
  ****************************************************************
@@ -702,7 +667,7 @@ void SortingCompetition::merge(char** &inputWords, int low, int high, int mid)
 ****************************************************************
 ****************************************************************
 **                                                            **
-**                      Shell Sort Shit                       **
+**                      Shell Sort                            **
 **                                                            **
 ****************************************************************
 ****************************************************************
