@@ -22,45 +22,45 @@ class SortingCompetition
 private:
     // you are free to determine your own internal
     // implementation with the following stipulations:
-    
+
     // 1) when the prepare method is called, you must make a
     // copy of the original dataset into another instance-level
     // data structure which will be used by the sort method. This will
     // allow for multiple executions of the sort method in order to
     // get better timing data.
     // 2) your data structure must be linear (no trees).
-    
+
     // MEMBER DATA
-    
+
     string inputFileName;
-    
+
     char** inputWords;
     char** sortWords;
-    
+
     // the number of elements in the char**
     int inputsize;
-    
+
     // the number of spots we can
     int inputcapacity;
-    
+
     // resizes the char** so we can fit more words.
     // adds 50 to the default capacity.
     void resizeInput();
-    
+
     void countSort(char**& inputWords);
-    
+
 public:
-    
+
     // basic constructor that accepts an input
     // file name
     SortingCompetition(const string& inputFileName);
-    
+
     // basic destructor
     ~SortingCompetition();
-    
+
     // change the input file name
     void setFileName(const string& inputFileName);
-    
+
     // read the data from the file and store it in
     // a linear data structure.
     // No sorting actions can be done in this method.
@@ -69,7 +69,7 @@ public:
     // Literally, the 5th word in the file should be
     // in the 5th place in your structure.
     bool readData();
-    
+
     // copy the data from the original data structure
     // into a second location that will be used for sorting.
     // This will allow you to sort the same data set (with
@@ -78,63 +78,40 @@ public:
     // one data set against one algorithm.
     // No sorting actions can be done in this method.
     bool prepareData();
-    // TODO: ^^^^ Clear out supplementary data structure.
-    
+
     // sort the data based on the criteria set forth in the
     // hand out.
     // THIS IS THE FUNCTION THAT WILL BE TIMED.
-    virtual void sortData();
-    
-    void quickSort(char** &inputWords, int left, int right);
-    
-    void quickSortAlpha(char** &inputWords, int left, int right);
+    void sortData();
 
-    void mergeSort(char** &inputWords, int low, int high);
-
-    void merge(char** &inputWords, int low, int high, int mid);
-
-    void selectionSort(char** &inputWords, int size);
-
-    void selectionSortAlpha(char** &inputWords, int start, int size);
-
-    void shellSort(char** &inputWords, int size);
-
-    void shellSortAlpha(char** &inputWords, int start, int size);
-
-    bool combinedSorting(char* a, char* b);
-
-    void insertionSort(char** &inputWords, int size);
-
-    void insertionSortAlpha(char** &inputWords, int start, int size);
-
-    void bubbleSortLength(char** &inputWords, int size);
-
-    void bubbleSortAlpha(char** &inputWords, int left, int size);
-    
     // Multikey Quicksort
     int min(int, int);
-    
+
     void vecswap(int, int, int, char** &);
-    
+
     void ssort(char** &, int);
-    
+
     void ssort1(char** &, int, int);
-    
+
     // using outputFileName, write the "sorted" data structure
     // to the file. This will be used to test the validity of
     // your sorting algorithm (in other words, did it sort properly?).
     void outputData(const string& outputFileName);
-    
+
+    // Formatting and Data Representation
+
     string toString(char**& arr);
-    
+
     void printArr(char**& arr);
-    
+
+    // Getters and Setters
+
     char**& getSortWords();
-    
+
     char**& getInputWords();
-    
+
     int& getInputSize();
-    
+
     int& getInputCapacity();
 };
 
