@@ -119,7 +119,6 @@ bool SortingCompetition::readData()
 // No sorting actions can be done in this method.
 bool SortingCompetition::prepareData()
 {
-    delete [] sortWords
     
     // Clear out supplementary data structure.
     sortWords = new char*[inputsize];
