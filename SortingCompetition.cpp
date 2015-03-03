@@ -7,6 +7,7 @@
 //
 
 #include "SortingCompetition.h"
+#include <omp.h>
 #define RANGE 255
 
 using namespace std;
@@ -119,7 +120,7 @@ bool SortingCompetition::readData()
 // No sorting actions can be done in this method.
 bool SortingCompetition::prepareData()
 {
-    
+
     // Clear out supplementary data structure.
     sortWords = new char*[inputsize];
 
@@ -326,27 +327,38 @@ void SortingCompetition::ssort1(char**& x, int n, int depth)
 
 void SortingCompetition::countSort(char** &inputWords)
 {
+    omp_set_num_threads(4);
+
     char** output = new char*[inputsize];
 
     int count[RANGE + 1];
 
-    memset(count, 0, sizeof(count));
-
-    for (int i = 0; i < inputsize; i++)
+    #pragma omp parallel
     {
-        ++count[strlen(inputWords[i])];
+        memset(count, 0, sizeof(count));
+
+        for (int i = 0; i < inputsize; i++)
+        {
+            ++count[strlen(inputWords[i])];
+        }
     }
 
-    for (int i = 1; i <= RANGE; ++i)
-        count[i] += count[i - 1];
-
-    for (int i = 0; i < inputsize; ++i)
+    #pragma omp parallel
     {
-        output[count[strlen(inputWords[i])] - 1] = new char[strlen(inputWords[i]) + 1];
+        for (int i = 1; i <= RANGE; ++i)
+            count[i] += count[i - 1];
+    }
 
-        strcpy(output[count[strlen(inputWords[i])] - 1], inputWords[i]);
+    #pragma omp parallel
+    {
+        for (int i = 0; i < inputsize; ++i)
+        {
+            output[count[strlen(inputWords[i])] - 1] = new char[strlen(inputWords[i]) + 1];
 
-        --count[strlen(inputWords[i])];
+            strcpy(output[count[strlen(inputWords[i])] - 1], inputWords[i]);
+
+            --count[strlen(inputWords[i])];
+        }
     }
 
     if (inputWords) delete[] inputWords;
