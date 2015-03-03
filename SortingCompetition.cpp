@@ -3,11 +3,11 @@
 //  Project3
 //
 //  Created by Microsoft R&D on 2/17/15.
+//  Jorge Valdez and Jayce Miller are Microsoft R&D
 //  Copyright (c) 2015 Microsoft R&D. All rights reserved.
 //
 
 #include "SortingCompetition.h"
-#include <omp.h>
 #define RANGE 255
 
 using namespace std;
@@ -327,30 +327,21 @@ void SortingCompetition::ssort1(char**& x, int n, int depth)
 
 void SortingCompetition::countSort(char** &inputWords)
 {
-    omp_set_num_threads(4);
 
     char** output = new char*[inputsize];
 
     int count[RANGE + 1];
 
-    #pragma omp parallel
-    {
         memset(count, 0, sizeof(count));
 
         for (int i = 0; i < inputsize; i++)
         {
             ++count[strlen(inputWords[i])];
         }
-    }
 
-    #pragma omp parallel
-    {
         for (int i = 1; i <= RANGE; ++i)
             count[i] += count[i - 1];
-    }
 
-    #pragma omp parallel
-    {
         for (int i = 0; i < inputsize; ++i)
         {
             output[count[strlen(inputWords[i])] - 1] = new char[strlen(inputWords[i]) + 1];
@@ -359,7 +350,6 @@ void SortingCompetition::countSort(char** &inputWords)
 
             --count[strlen(inputWords[i])];
         }
-    }
 
     if (inputWords) delete[] inputWords;
     inputWords = output;
