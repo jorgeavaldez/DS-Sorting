@@ -81,19 +81,16 @@ void SortingCompetition::setFileName(const string &inputFileName)
 // in the 5th place in your structure.
 bool SortingCompetition::readData()
 {
-    cout << "in read data" << endl;
     ifstream in(inputFileName);
 
     if (!in)
     {
-        cout << "Unable to open file" << endl;
         return false;
     }
 
 
     int i = 0;
     char* buffer = new char[91];
-    cout << "about to enter while loop" << endl;
 
     while (in >> buffer)
     {
@@ -108,7 +105,6 @@ bool SortingCompetition::readData()
         inputsize++;
     }
 
-    cout << "about to close file" << endl;
     delete[] buffer;
     in.close();
     return true;
@@ -124,8 +120,6 @@ bool SortingCompetition::readData()
 bool SortingCompetition::prepareData()
 {
     // Clear out supplementary data structure.
-    //if (sortWords) delete[] sortWords;
-    cout << "in prepare data" << endl;
     sortWords = new char*[inputsize];
 
     for (int i = 0; i < inputsize; i++)
@@ -459,13 +453,9 @@ void SortingCompetition::countSort(char** &inputWords)
 
 void SortingCompetition::selectionSort(char** &inputWords, int size)
 {
-    cout << "in selectionSort" << endl;
 
     int i, j, minIndex;
     char* temp;
-
-    cout << "selectionSort for loop" << endl;
-    cout << "size is " << size << endl;
 
     for (i = 0; i < size - 1; i++)
     {
@@ -482,8 +472,6 @@ void SortingCompetition::selectionSort(char** &inputWords, int size)
             inputWords[minIndex] = temp;
         }
     }
-
-    cout << "out of for loop" << endl;
 }
 
 void SortingCompetition::selectionSortAlpha(char** &inputWords, int start, int size)
@@ -603,7 +591,6 @@ void SortingCompetition::bubbleSortAlpha(char** &inputWords, int start, int size
 
 void SortingCompetition::mergeSort(char** &inputWords, int low, int high)
 {
-    cout << "in mergeSort" << endl;
     int mid;
     if (low < high)
     {
@@ -617,7 +604,6 @@ void SortingCompetition::mergeSort(char** &inputWords, int low, int high)
 
 void SortingCompetition::merge(char** &inputWords, int low, int high, int mid)
 {
-    cout << "in merge" << endl;
     int i, j, k;
     char* exchanger[91];
 
@@ -694,7 +680,6 @@ void SortingCompetition::shellSortAlpha(char** &inputWords, int start, int size)
     int gap, i, j;
     char* temp;
 
-    cout << "enters shellSortAlpha" << endl;
     for (gap = (size/2) + start; gap > start; gap = (gap+start)/2)
         for (i = gap; i < size + start; i++)
         {
